@@ -9,7 +9,9 @@ import com.trupper.carrito.model.ListaCompra;
 import com.trupper.carrito.model.ListaCompraDetalle;
 import com.trupper.carrito.model.ListaCompraDetalleRequestVO;
 import com.trupper.carrito.model.ListaCompraProductosRequestVO;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface CarritoService {
 	
 	public ResponseEntity<HttpStatus> addListas(List<ListaCompraDetalleRequestVO> listaCompraDetalleRequestVO);

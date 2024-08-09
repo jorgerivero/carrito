@@ -7,7 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.trupper.carrito.model.ListaCompra;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ListaCompraRepository extends JpaRepository<ListaCompra, Long> {
 
     @Query(value = "select * from ListaCompra where id_cliente = :idCliente", nativeQuery = true)
