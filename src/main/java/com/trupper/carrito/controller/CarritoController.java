@@ -18,7 +18,11 @@ import org.springframework.web.bind.annotation.*;
 public class CarritoController {
 
 	@Autowired
-	private CarritoService carritoService;
+	private final CarritoService carritoService;
+
+    public CarritoController(CarritoService carritoService) {
+        this.carritoService = carritoService;
+    }
 	
 	/*
 	static {

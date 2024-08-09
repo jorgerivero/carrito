@@ -22,23 +22,23 @@ import com.trupper.carrito.repository.ListaCompraDetalleRepository;
 import com.trupper.carrito.repository.ListaCompraRepository;
 import com.trupper.carrito.repository.ProductoRepository;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class CarritoServiceImpl implements CarritoService {
 	
 	@Autowired
-	ClienteRepository clienteRepository;
+	private final ClienteRepository clienteRepository;
 	
 	@Autowired
-	ProductoRepository productoRepository;
+	private final ProductoRepository productoRepository;
 	
 	@Autowired
-	ListaCompraRepository listaCompraRepository;
+	private final ListaCompraRepository listaCompraRepository;
 	
 	@Autowired
-	ListaCompraDetalleRepository listaCompraDetalleRepository;
+	private final ListaCompraDetalleRepository listaCompraDetalleRepository;
 	
 	public ResponseEntity<HttpStatus> addListas(List<ListaCompraDetalleRequestVO> listaCompraDetalleRequestVO) {
 		

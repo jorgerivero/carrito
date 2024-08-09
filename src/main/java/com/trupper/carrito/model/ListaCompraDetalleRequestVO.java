@@ -19,7 +19,4 @@ public class ListaCompraDetalleRequestVO implements Serializable {
 	
 	public List<ListaCompraProductosRequestVO> ListaCompraProductosVO;
 	
-	private Long idProducto; 
-	private int cantidad;
-	
 }
