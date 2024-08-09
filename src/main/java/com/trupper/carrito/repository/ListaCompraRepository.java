@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ListaCompraRepository extends JpaRepository<ListaCompra, Long> {
 
-    @Query(value = "select * from ListaCompra where id_cliente = :idCliente", nativeQuery = true)
+    @Query(value = "select * from Lista_Compra where customer_id = :idCliente", nativeQuery = true)
     List<ListaCompra> getListaCompras(@Param("idCliente") Long idCliente);
     
 }
