@@ -82,11 +82,11 @@ iamendezm@truper.com
 	}
 	
 	@PutMapping("/updatePreciosCliente/{idCliente}") 
-	public ResponseEntity<HttpStatus> updateListaPreciosByClienteId(@PathVariable Long idCliente, List<ListaCompraProductosRequestVO> listaCompraProductosRequestVOs) {
+	public ResponseEntity<HttpStatus> updateListaPreciosByClienteId(@PathVariable Long idCliente, @RequestBody List<ListaCompraProductosRequestVO> listaCompraProductosRequestVOs) {
 		return carritoService.updateListaPreciosByClienteId(idCliente, listaCompraProductosRequestVOs);
 	}
 	
-	@DeleteMapping("/deleteListaById/{idListaCompra}")
+	@DeleteMapping("/deleteListaByIdLista/{idListaCompra}")
 	public ResponseEntity<HttpStatus> deleteListaCompraByIdListaCompra(@PathVariable Long idListaCompra) {
 		return carritoService.deleteListaCompraByIdListaCompra(idListaCompra);
 	}
