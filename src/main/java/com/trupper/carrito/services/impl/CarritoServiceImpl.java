@@ -48,7 +48,7 @@ public class CarritoServiceImpl implements CarritoService {
 			String nombreLista = listaCompraDetalleVO.getNombreLista();
 			
 			Cliente cliente = new Cliente();
-			cliente.setClienteID(idCliente);
+			cliente.setIdCliente(idCliente);
 			clienteRepository.save(cliente);
 			
 			ListaCompra listaCompra = new ListaCompra();
@@ -58,6 +58,9 @@ public class CarritoServiceImpl implements CarritoService {
 			for (ListaCompraProductosRequestVO productoCompra : listaCompraDetalleVO.getListaCompraProductosVO()) {
 				Producto producto = new Producto();
 				producto.setIdProducto(productoCompra.getIdProducto());
+				producto.setDescripcion(producto.getDescripcion());
+				producto.setActivo(productoCompra.isActivo());
+				productoRepository.save(producto);
 				
 				//ListaCompraDetalle listaCompraDetalle = new ListaCompraDetalle(listaCompra.getIdLista(), producto.getIdProducto());
 				ListaCompraDetalle listaCompraDetalle = new ListaCompraDetalle();

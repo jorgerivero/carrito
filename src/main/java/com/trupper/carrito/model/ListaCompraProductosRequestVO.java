@@ -15,5 +15,7 @@ public class ListaCompraProductosRequestVO implements Serializable {
 
 	private Long idProducto;
 	private int cantidad;
+	private String descripcion;
+	private boolean activo;
 	
 }

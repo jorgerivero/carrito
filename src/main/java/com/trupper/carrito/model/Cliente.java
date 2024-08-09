@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "cliente")
@@ -19,10 +20,15 @@ import java.io.Serializable;
 public class Cliente implements Serializable {
 
 	@Id
-	@Column(name = "clienteID", nullable = false)
+	@Column(name = "idCliente", nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long clienteID;
+	private Long idCliente;
 	
 	private String nombre;
 	private boolean activo;
+
+	@PrePersist
+	public void prePersist() {
+		this.activo = true;
+	}
 }

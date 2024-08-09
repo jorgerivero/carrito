@@ -1,10 +1,6 @@
 package com.trupper.carrito.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,5 +26,9 @@ public class Producto {
 	
 	//@OneToMany(mappedBy = "idListaCompra", fetch = FetchType.LAZY, orphanRemoval = true)
 	//private List<ListaCompraDetalle> listaCompraProductoDetalle;
-	
+
+	@PrePersist
+	public void prePersist() {
+		this.activo = true;
+	}
 }

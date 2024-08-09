@@ -3,13 +3,9 @@ package com.trupper.carrito.model;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import jakarta.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,9 +26,9 @@ public class ListaCompraDetalle /*extends ListaCompraDetallePK */implements Seri
 	//@Id
 	@EmbeddedId
 	private ListaCompraDetallePK idListaCompraDetallePK;;
-	
-	//private String idCodigoProducto;
-	private String nombre;
+
+	private String idListaCompraFk;
+	private String idCodigoProductoFk;
 	
 	@DateTimeFormat(pattern = "yyyy.MM.dd HH:mm:ss")
 	private LocalDateTime fechaRegistro;
@@ -49,5 +45,10 @@ public class ListaCompraDetalle /*extends ListaCompraDetallePK */implements Seri
 		//this.idListaCompra = idListaCompra;
 		//this.idProducto = idProducto;
 	//}
+
+	@PrePersist
+	public void prePersist() {
+		this.activo = true;
+	}
 	
 }
