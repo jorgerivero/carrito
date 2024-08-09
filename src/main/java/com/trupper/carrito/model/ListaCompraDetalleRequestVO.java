@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ListaCompraDetalleRequestVO implements Serializable {
 
-	private Long clienteId;
+	private Long idCliente;
 	private String nombreLista;
 	
 	public List<ListaCompraProductosRequestVO> ListaCompraProductosVO;

@@ -5,11 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Component
-public class ListaCompraProductosRequestVO {
+public class ListaCompraProductosRequestVO implements Serializable {
 
 	private Long idProducto;
 	private int cantidad;

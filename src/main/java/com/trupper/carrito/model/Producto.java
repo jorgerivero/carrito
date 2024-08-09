@@ -21,7 +21,7 @@ import lombok.ToString;
 public class Producto {
  
 	@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProducto;
 	
 	private String clave;

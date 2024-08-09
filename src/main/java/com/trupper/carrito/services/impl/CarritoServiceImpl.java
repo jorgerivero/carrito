@@ -1,9 +1,11 @@
-package services.impl;
+package com.trupper.carrito.services.impl;
 
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.trupper.carrito.services.CarritoService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +22,10 @@ import com.trupper.carrito.repository.ListaCompraDetalleRepository;
 import com.trupper.carrito.repository.ListaCompraRepository;
 import com.trupper.carrito.repository.ProductoRepository;
 
-import services.CarritoService;
+import org.springframework.stereotype.Component;
 
+@Component
+@RequiredArgsConstructor
 public class CarritoServiceImpl implements CarritoService {
 	
 	@Autowired
@@ -40,11 +44,11 @@ public class CarritoServiceImpl implements CarritoService {
 		
 		for (ListaCompraDetalleRequestVO listaCompraDetalleVO : listaCompraDetalleRequestVO) {
 
-			Long idCliente = listaCompraDetalleVO.getClienteId();
+			Long idCliente = listaCompraDetalleVO.getIdCliente();
 			String nombreLista = listaCompraDetalleVO.getNombreLista();
 			
 			Cliente cliente = new Cliente();
-			cliente.setIdCliente(idCliente);
+			cliente.setClienteID(idCliente);
 			clienteRepository.save(cliente);
 			
 			ListaCompra listaCompra = new ListaCompra();

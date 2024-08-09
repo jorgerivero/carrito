@@ -1,33 +1,24 @@
 package com.trupper.carrito.controller;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+import com.trupper.carrito.services.CarritoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
-import com.trupper.carrito.model.Cliente;
 import com.trupper.carrito.model.ListaCompra;
-import com.trupper.carrito.model.ListaCompraDetalle;
 import com.trupper.carrito.model.ListaCompraDetalleRequestVO;
 import com.trupper.carrito.model.ListaCompraProductosRequestVO;
-import com.trupper.carrito.model.Producto;
-import com.trupper.carrito.repository.ClienteRepository;
-import com.trupper.carrito.repository.ListaCompraDetalleRepository;
-import com.trupper.carrito.repository.ListaCompraRepository;
-import com.trupper.carrito.repository.ProductoRepository;
+import org.springframework.web.bind.annotation.*;
 
-import services.CarritoService;
-
+@Slf4j
 @RestController
 public class CarritoController {
 
 	@Autowired
-	CarritoService carritoService;
+	private CarritoService carritoService;
 	
 	/*
 	static {

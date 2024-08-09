@@ -1,4 +1,4 @@
-package services;
+package com.trupper.carrito.services;
 
 import java.util.List;
 
@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.trupper.carrito.model.ListaCompra;
-import com.trupper.carrito.model.ListaCompraDetalle;
 import com.trupper.carrito.model.ListaCompraDetalleRequestVO;
 import com.trupper.carrito.model.ListaCompraProductosRequestVO;
 import org.springframework.stereotype.Service;

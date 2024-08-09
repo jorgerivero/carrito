@@ -1,13 +1,13 @@
 package com.trupper.carrito.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.io.Serializable;
 
 @Entity
 @Table(name = "cliente")
@@ -16,10 +16,12 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class Cliente {
-	
+public class Cliente implements Serializable {
+
 	@Id
-	private Long idCliente;
+	@Column(name = "clienteID", nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long clienteID;
 	
 	private String nombre;
 	private boolean activo;
