@@ -26,7 +26,7 @@ public class ListaCompra {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idLista;
 	
-	private String customerId;
+	private Long customerId;
 	private String nombre;
 	
 	@DateTimeFormat(pattern = "yyyy.MM.dd HH:mm:ss")

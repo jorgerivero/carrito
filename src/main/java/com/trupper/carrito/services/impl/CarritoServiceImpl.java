@@ -53,6 +53,7 @@ public class CarritoServiceImpl implements CarritoService {
 			
 			ListaCompra listaCompra = new ListaCompra();
 			listaCompra.setNombre(nombreLista);
+			listaCompra.setCustomerId(idCliente);
 			listaCompra = listaCompraRepository.save(listaCompra);
 			
 			for (ListaCompraProductosRequestVO productoCompra : listaCompraDetalleVO.getListaCompraProductosVO()) {

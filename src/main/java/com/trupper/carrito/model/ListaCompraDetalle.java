@@ -25,16 +25,7 @@ public class ListaCompraDetalle /*extends ListaCompraDetallePK */implements Seri
 
 	//@Id
 	@EmbeddedId
-	private ListaCompraDetallePK idListaCompraDetallePK;;
-
-	private String idListaCompraFk;
-	private String idCodigoProductoFk;
-	
-	@DateTimeFormat(pattern = "yyyy.MM.dd HH:mm:ss")
-	private LocalDateTime fechaRegistro;
-	
-	@DateTimeFormat(pattern = "yyyy.MM.dd HH:mm:ss")
-	private LocalDateTime fechaUltimaActualizacion;
+	private ListaCompraDetallePK idListaCompraDetallePK;
 	
 	private int cantidad;
 	
